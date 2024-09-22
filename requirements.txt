@@ -1,0 +1,5 @@
+nltk
+plotly
+spacy
+pandas
+streamlit
