@@ -26,4 +26,4 @@ Run the application
 streamlit run app.py
 ```
 
-Sample text file is under the [sentiment-analyzer.txt](sentiment-analyzer.txt)
+Sample text file is under the [sentiment_analysis.txt](sentiment_analysis.txt)
