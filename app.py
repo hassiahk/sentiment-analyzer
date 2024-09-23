@@ -24,7 +24,7 @@ if selected_option == "Text Fields":
     text2 = st.text_input("Text Input 2", placeholder="Enter text")
     text3 = st.text_input("Text Input 3", placeholder="Enter text")
 
-    if text1 and text2 and text3:
+    if st.button("Analyze"):
         for text in [text1, text2, text3]:
             sentiment, scores = analyze_sentiment_vader(text)
             fig = display_sentiment_plotly(sentiment, scores)
