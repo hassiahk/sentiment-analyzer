@@ -26,6 +26,7 @@ if selected_option == "Text Fields":
 
     if st.button("Analyze"):
         for text in [text1, text2, text3]:
+            text = text.strip()  # Remove any extra whitespace/newline
             sentiment, scores = analyze_sentiment_vader(text)
             fig = display_sentiment_plotly(sentiment, scores)
 
@@ -46,6 +47,7 @@ if selected_option == "File Upload":
         texts = string_data.split("\n")
 
         for text in texts:
+            text = text.strip()  # Remove any extra whitespace/newline
             sentiment, scores = analyze_sentiment_vader(text)
             fig = display_sentiment_plotly(sentiment, scores)
 
