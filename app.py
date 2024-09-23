@@ -4,17 +4,18 @@ import streamlit as st
 
 from nlp import analyze_sentiment_vader, display_sentiment_plotly
 
-st.title("Sentiment Analyzer")
+with st.sidebar:
+    st.title("Sentiment Analyzer")
 
-selected_option = st.radio(
-    "Please select one option",
-    ["Text Fields", "File Upload"],
-    captions=[
-        "Enter three texts",
-        "Upload a file with texts",
-    ],
-    index=None,
-)
+    selected_option = st.radio(
+        "Please select one option",
+        ["Text Fields", "File Upload"],
+        captions=[
+            "Enter three texts",
+            "Upload a file with texts",
+        ],
+        index=None,
+    )
 
 if selected_option == "Text Fields":
     st.cache_data.clear()
@@ -52,5 +53,3 @@ if selected_option == "File Upload":
             st.write(f"Sentiment: {sentiment}, Scores: {scores}")
 
             st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.write("No file uploaded")
