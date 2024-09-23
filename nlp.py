@@ -8,10 +8,20 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
+# Download the VADER lexicon from NLTK
 nltk.download("vader_lexicon")
 nltk.download("punkt_tab")
 
+"""
+VADER's `SentimentIntensityAnalyzer()` takes in a string and returns a dictionary of scores in each of four categories:
+* negative
+* neutral
+* positive
+* compound *(computed by normalizing the scores above)*
+"""
 vader = SentimentIntensityAnalyzer()
+
+# Porter Stemmer for stemming
 ps = PorterStemmer()
 
 # Load spaCy model
